@@ -1,59 +1,58 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8" />
-    <title>狗狗歲數換算器｜Dog Age Calculator</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狗狗歲數換算器｜日系手繪風</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <h1 class="title">🐶 狗狗歲數換算器</h1>
+<div class="bg-overlay"></div>
 
-    <!-- 插畫 -->
-    <div class="dog-illustration">
-        <img id="dogFace" src="images/pup.png" alt="dog face" />
+<header>
+    <h1>🐶 狗狗歲數換算器</h1>
+</header>
+
+<section class="calculator-card">
+
+    <div class="illustration-area">
+        <img id="dog-illustration" src="images/pup.png" alt="dog stage">
     </div>
 
-    <!-- 表單 -->
-    <div class="form-section">
-        <label>選擇出生日期：</label>
-        <input type="date" id="birthDate" />
+    <label>請輸入狗狗生日：</label>
+    <input type="date" id="birthdate">
 
-        <label>選擇狗狗體型：</label>
-        <select id="dogSize">
-            <option value="small">小型犬（<10kg）</option>
-            <option value="medium">中型犬（10–25kg）</option>
-            <option value="large">大型犬（25kg 以上）</option>
-        </select>
+    <label>選擇狗狗體型：</label>
+    <select id="size">
+        <option value="small">小型犬（吉娃娃、博美…）</option>
+        <option value="medium">中型犬（柴犬、可卡…）</option>
+        <option value="large">大型犬（黃金、拉布拉多…）</option>
+    </select>
 
-        <button id="calcBtn">開始換算</button>
-    </div>
+    <button id="calc-btn">開始換算</button>
 
-    <!-- 結果 -->
-    <div class="result">
-        <h2 id="humanAge">人類年齡：-- 歲</h2>
+    <div id="result" class="result hidden">
+        <h2 id="age-text">人類年齡：約 -- 歲</h2>
+        <p id="stage-text">年齡階段：--</p>
 
-        <div class="progress-wrapper">
-            <div id="progressBar" class="progress-bar"></div>
+        <div class="progress-container">
+            <div id="progress-bar"></div>
         </div>
 
-        <p id="lifeStage" class="life-stage">（年齡階段：--）</p>
+        <p id="save-msg"></p>
     </div>
+</section>
 
-    <!-- 上次結果 -->
-    <div id="lastRecord" class="last-record"></div>
+<section class="formula-section">
+    <h3>📘 計算公式（Cell Systems, 2020）</h3>
+    <p>人類年齡 ＝ <strong>16 × ln(狗狗實際年齡) ＋ 31</strong></p>
 
-    <!-- 計算公式說明 -->
-    <div class="formula-box">
-        <h3>📘 計算公式（Cell Systems, 2020）</h3>
-        <p>
-            人類年齡 ≈ 16 × ln(狗狗實際年齡) + 31  
-            <br>※ 公式來自 Cell Systems（2020），以 DNA 甲基化變化推算物種間老化速率。
-            <br>※ 本換算依科學研究模型，極端年齡僅供參考。
-        </p>
-    </div>
-</div>
+    <p class="note">
+        ※ 本換算依科學研究模型（Cell Systems, 2020），主要以 DNA 甲基化時鐘推估；  
+        極端年齡僅供參考，不適用於所有犬種與特殊健康狀況。
+    </p>
+</section>
 
 <script src="script.js"></script>
 </body>
