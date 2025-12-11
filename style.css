@@ -9,7 +9,7 @@ body {
 
 /* ---- 背景：日系手繪插畫 ---- */
 .bg-overlay {
-    background-image: url('images/dog-background.jpg'); /* ← 這裡放你給我的插畫背景 */
+    background-image: url('images/dog-background.jpg'); 
     background-size: cover;
     background-position: center;
     opacity: 0.7;
